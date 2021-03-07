@@ -93,6 +93,11 @@
       "log": "alex@gmail.com",
       "pass": "лдщш80986еачп",
       "id": 4
+    },
+    {
+      "log": "qwerty@ex.com",
+      "pass": "123qwe",
+      "id": 5
     }
   ]
 }
