@@ -1,30 +1,34 @@
-function authorization() {
+function openWindowModal(modalSelector) {
+    const modal =  document.querySelector(modalSelector);
 
-    const btnLog = document.querySelector('.autho'),
-        modal = document.querySelector('.modal');
+    modal.classList.add('show');
+    modal.classList.remove('hide');
+    document.body.style.overflow = 'hidden';
+}
+function closeWindowModal(modalSelector) {
+    const modal =  document.querySelector(modalSelector);
 
+    modal.classList.add('hide');
+    modal.classList.remove('show');
+    document.body.style.overflow = '';
+}
 
-    function openWindowModal() {
-        modal.classList.add('show');
-        modal.classList.remove('hide');
-        document.body.style.overflow = 'hidden';
-    }
-    function closeWindowModal() {
-        modal.classList.add('hide');
-        modal.classList.remove('show');
-        document.body.style.overflow = '';
-    }
-    btnLog.addEventListener('click', openWindowModal);
+function authorization(triggerSelector, modalSelector) {
+
+    const btnLog = document.querySelector(triggerSelector),
+          modal = document.querySelector(modalSelector);
+
+    btnLog.addEventListener('click', () => openWindowModal(modalSelector));
 
     document.addEventListener('keydown', (event) => {
         if (event.code === 'Escape' && modal.classList.contains('show')){
-            closeWindowModal();
+            closeWindowModal(modalSelector);
         }
     });
 
     modal.addEventListener('click', (event) => {
         if (event.target === modal){
-            closeWindowModal();
+            closeWindowModal(modalSelector);
         }
     });
 
@@ -39,3 +43,4 @@ function authorization() {
 }
 
 export default authorization;
+export {closeWindowModal, openWindowModal};

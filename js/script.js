@@ -5,8 +5,8 @@ import forms from './modules/forms';
 
 window.addEventListener('DOMContentLoaded', () => {
     
-    authorization();
-    buttonUp();
-    forms();    
+    authorization('.autho', '.modal');
+    buttonUp('#btn');
+    forms('.modal form');    
 
 });

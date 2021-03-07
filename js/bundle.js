@@ -10,35 +10,41 @@
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__),
+/* harmony export */   "closeWindowModal": () => (/* binding */ closeWindowModal),
+/* harmony export */   "openWindowModal": () => (/* binding */ openWindowModal)
 /* harmony export */ });
-function authorization() {
+function openWindowModal(modalSelector) {
+    const modal =  document.querySelector(modalSelector);
 
-    const btnLog = document.querySelector('.autho'),
-        modal = document.querySelector('.modal');
+    modal.classList.add('show');
+    modal.classList.remove('hide');
+    document.body.style.overflow = 'hidden';
+}
+function closeWindowModal(modalSelector) {
+    const modal =  document.querySelector(modalSelector);
 
+    modal.classList.add('hide');
+    modal.classList.remove('show');
+    document.body.style.overflow = '';
+}
 
-    function openWindowModal() {
-        modal.classList.add('show');
-        modal.classList.remove('hide');
-        document.body.style.overflow = 'hidden';
-    }
-    function closeWindowModal() {
-        modal.classList.add('hide');
-        modal.classList.remove('show');
-        document.body.style.overflow = '';
-    }
-    btnLog.addEventListener('click', openWindowModal);
+function authorization(triggerSelector, modalSelector) {
+
+    const btnLog = document.querySelector(triggerSelector),
+          modal = document.querySelector(modalSelector);
+
+    btnLog.addEventListener('click', () => openWindowModal(modalSelector));
 
     document.addEventListener('keydown', (event) => {
         if (event.code === 'Escape' && modal.classList.contains('show')){
-            closeWindowModal();
+            closeWindowModal(modalSelector);
         }
     });
 
     modal.addEventListener('click', (event) => {
         if (event.target === modal){
-            closeWindowModal();
+            closeWindowModal(modalSelector);
         }
     });
 
@@ -54,6 +60,7 @@ function authorization() {
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (authorization);
 
+
 /***/ }),
 
 /***/ "./js/modules/buttonUp.js":
@@ -66,15 +73,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-function buttonUp() {
+function buttonUp(buttonSelector) {
 
-    const btn = document.querySelector("#btn");
+    const btn = document.querySelector(buttonSelector);
 
     function scrollFunction() {
         if (document.documentElement.scrollTop > 20) {
-            btn.style.display = "block";
+            btn.style.display = 'block';
         } else {
-            btn.style.display = "none";
+            btn.style.display = 'none';
         }
     }
 
@@ -99,9 +106,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-function forms() {
+/* harmony import */ var _authorization__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./authorization */ "./js/modules/authorization.js");
 
-    const forms = document.querySelectorAll('.modal form');
+
+function forms(formsSelector) {
+
+    const forms = document.querySelectorAll(formsSelector);
 
     const message = {
         success: 'Вы авторизовались',
@@ -148,7 +158,7 @@ function forms() {
         const prevModalDialog = document.querySelector('.modal__dialog');
         
         prevModalDialog.classList.add('hide');
-        openWindowModal();
+        (0,_authorization__WEBPACK_IMPORTED_MODULE_0__.openWindowModal)('.modal');
 
         const thinksModal = document.createElement('div');
         thinksModal.classList.add('modal__dialog');
@@ -163,7 +173,7 @@ function forms() {
             thinksModal.remove();
             prevModalDialog.classList.add('show');
             prevModalDialog.classList.remove('hide');
-            closeWindowModal();
+            (0,_authorization__WEBPACK_IMPORTED_MODULE_0__.closeWindowModal)('.modal');
         }, 4000);
     }
 }
@@ -244,9 +254,9 @@ __webpack_require__.r(__webpack_exports__);
 
 window.addEventListener('DOMContentLoaded', () => {
     
-    (0,_modules_authorization__WEBPACK_IMPORTED_MODULE_0__.default)();
-    (0,_modules_buttonUp__WEBPACK_IMPORTED_MODULE_1__.default)();
-    (0,_modules_forms__WEBPACK_IMPORTED_MODULE_2__.default)();    
+    (0,_modules_authorization__WEBPACK_IMPORTED_MODULE_0__.default)('.autho', '.modal');
+    (0,_modules_buttonUp__WEBPACK_IMPORTED_MODULE_1__.default)('#btn');
+    (0,_modules_forms__WEBPACK_IMPORTED_MODULE_2__.default)('.modal form');    
 
 });
 

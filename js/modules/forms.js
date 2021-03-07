@@ -1,6 +1,8 @@
-function forms() {
+import {closeWindowModal, openWindowModal} from './authorization';
 
-    const forms = document.querySelectorAll('.modal form');
+function forms(formsSelector) {
+
+    const forms = document.querySelectorAll(formsSelector);
 
     const message = {
         success: 'Вы авторизовались',
@@ -47,7 +49,7 @@ function forms() {
         const prevModalDialog = document.querySelector('.modal__dialog');
         
         prevModalDialog.classList.add('hide');
-        openWindowModal();
+        openWindowModal('.modal');
 
         const thinksModal = document.createElement('div');
         thinksModal.classList.add('modal__dialog');
@@ -62,7 +64,7 @@ function forms() {
             thinksModal.remove();
             prevModalDialog.classList.add('show');
             prevModalDialog.classList.remove('hide');
-            closeWindowModal();
+            closeWindowModal('.modal');
         }, 4000);
     }
 }

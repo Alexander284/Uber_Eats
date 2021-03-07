@@ -1,12 +1,12 @@
-function buttonUp() {
+function buttonUp(buttonSelector) {
 
-    const btn = document.querySelector("#btn");
+    const btn = document.querySelector(buttonSelector);
 
     function scrollFunction() {
         if (document.documentElement.scrollTop > 20) {
-            btn.style.display = "block";
+            btn.style.display = 'block';
         } else {
-            btn.style.display = "none";
+            btn.style.display = 'none';
         }
     }
 
