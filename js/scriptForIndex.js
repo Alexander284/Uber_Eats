@@ -51,37 +51,25 @@ window.addEventListener('DOMContentLoaded', () => {
 
     // Filter
     const input = document.querySelector('.site-search'),
-        inputForm = document.querySelector('.search-box');
+          inputForm = document.querySelector('.search-box');
 
     inputForm.addEventListener('submit', e => e.preventDefault());
 
     function cardsFilter() {
-        const request = new XMLHttpRequest();
+        const nameRests = document.querySelectorAll('.name-rest'),
+              cards = document.querySelectorAll('.card-item'),
+              inputValue = input.value.toUpperCase();
 
-        request.open('GET', 'db.json');
-        request.setRequestHeader('Content-type', 'application/json; charset=utf-8');
-        request.send();
-
-        request.addEventListener('load', () => {
-            if (request.status === 200) {
-                const inputValue = input.value.toUpperCase();
-                
-                axios.get('http://localhost:3000/restourants')
-                .then(data => {
-                    for (let i = 0; i < data.data.length; i++) {
-                        const cards = document.querySelectorAll('.card-item');
-                        if (!data.data[i].restName.toUpperCase().includes(inputValue)) {
-                            cards[i].classList.add('hide');
-                            cards[i].classList.remove('show');
-                        }else {
-                            cards[i].classList.add('show');
-                            cards[i].classList.remove('hide');
-                        }
-                    }
-                     
-                });                                 
-            }
-        });
+        for (let i = 0; i < nameRests.length; i++){
+            const name = nameRests[i].outerText.toUpperCase();
+            if (!name.includes(inputValue)) {
+                cards[i].classList.add('hide');
+                cards[i].classList.remove('show');
+            }else {
+                cards[i].classList.add('show');
+                cards[i].classList.remove('hide');
+            }   
+        }
     }
 
     input.addEventListener('input', cardsFilter);
