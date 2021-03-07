@@ -1,7 +1,6 @@
 {
   "name": "uber_eats",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -11,5 +10,19 @@
   "dependencies": {
     "json-server": "^0.16.3",
     "save-dev": "^0.0.1-security"
-  }
+  },
+  "devDependencies": {
+    "webpack": "^5.24.3",
+    "webpack-cli": "^4.5.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Alexander284/Uber_Eats.git"
+  },
+  "keywords": [],
+  "bugs": {
+    "url": "https://github.com/Alexander284/Uber_Eats/issues"
+  },
+  "homepage": "https://github.com/Alexander284/Uber_Eats#readme",
+  "description": ""
 }
