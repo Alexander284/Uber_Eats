@@ -1,0 +1,88 @@
+{
+  "restourants": [
+    {
+      "href": "Index_rest.html",
+      "src": "Stores/1-4.png",
+      "alt": "Макдоналдс — Газетный",
+      "restName": "Макдоналдс — Газетный",
+      "kitchen": "₽₽ • Бургеры",
+      "deliveryTime": "25-35"
+    },
+    {
+      "href": "Index_rest.html",
+      "src": "Stores/1-5.png",
+      "alt": "DimSum & Co — ЦДМ",
+      "restName": "DimSum & Co — ЦДМ",
+      "kitchen": "₽ • Японская • Китайская • Азиатская",
+      "deliveryTime": "40-50"
+    },
+    {
+      "href": "Index_rest.html",
+      "src": "Stores/1-3.png",
+      "alt": "ДвижОК — Манежная",
+      "restName": "ДвижОК — Манежная",
+      "kitchen": "₽ • Американская • Европейская",
+      "deliveryTime": "35-45"
+    },
+    {
+      "href": "Index_rest.html",
+      "src": "Stores/1-2.png",
+      "alt": "НЯ — NHA",
+      "restName": "НЯ — NHA",
+      "kitchen": "₽₽ • Вьетнамская",
+      "deliveryTime": "30-40"
+    },
+    {
+      "href": "Index_rest.html",
+      "src": "Stores/1-1.png",
+      "alt": "Точка Дзы — Цветной",
+      "restName": "Точка Дзы — Цветной",
+      "kitchen": "₽₽ • Вьетнамская",
+      "deliveryTime": "30-40"
+    },
+    {
+      "href": "Index_rest.html",
+      "src": "Stores/photo-2.png",
+      "alt": "Cinnabon",
+      "restName": "Cinnabon",
+      "kitchen": "₽ • Выпечка • Десерты • Капкейки",
+      "deliveryTime": "25-35"
+    },
+    {
+      "href": "Index_rest.html",
+      "src": "Stores/1.png",
+      "alt": "PIZZELOVE",
+      "restName": "PIZZELOVE",
+      "kitchen": "₽₽ • Пицца",
+      "deliveryTime": "15-25"
+    },
+    {
+      "href": "Index_rest.html",
+      "src": "Stores/photo.png",
+      "alt": "Zю Кафе — Тверская",
+      "restName": "Zю Кафе — Тверская",
+      "kitchen": "₽₽ • Японская",
+      "deliveryTime": "30-40"
+    },
+    {
+      "href": "Index_rest.html",
+      "src": "Stores/photo-1.png",
+      "alt": "Bar BQ Cafe — Манежная",
+      "restName": "Bar BQ Cafe — Манежная",
+      "kitchen": "₽₽₽ • Европейская",
+      "deliveryTime": "30-40"
+    }
+  ],
+  "requests": [
+    {
+      "log": "alexander@gmail.com",
+      "pass": "123456",
+      "id": 1
+    },
+    {
+      "log": "alexander@gmail.com",
+      "pass": "123",
+      "id": 2
+    }
+  ]
+}
