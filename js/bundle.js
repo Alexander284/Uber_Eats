@@ -88,7 +88,10 @@ function buttonUp(buttonSelector) {
     window.addEventListener('scroll', scrollFunction);
 
     btn.addEventListener('click', () => {
-        document.documentElement.scrollTop = 0;
+        document.documentElement.scrollIntoView({
+            block: 'start', 
+            behavior: 'smooth'
+        });
     });
 }
 
